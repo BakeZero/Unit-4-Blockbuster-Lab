@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Formats.Asn1.AsnWriter;
 
 namespace Unit_4_Blockbuster_Lab
 {
@@ -22,7 +23,7 @@ namespace Unit_4_Blockbuster_Lab
             {
                 do
                 {
-                    int index = Validator.GetNumberScene(1, Scenes.Count) - 1;
+                    int index = Validator.GetNumber(1, Scenes.Count, "Which scene would you like to watch?") - 1;
                     Console.WriteLine($"Scene {index+1}: {Scenes[index]}\n");
                 } while (Continue());
             }

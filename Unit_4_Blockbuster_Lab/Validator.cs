@@ -8,33 +8,19 @@ namespace Unit_4_Blockbuster_Lab
 {
     internal static class Validator
     {
-        public static int GetNumberMovie(int lower, int upper)
-        {
-            try
-            {
-                Console.Write($"Which movie would you like to watch? ({lower}-{upper}): ");
-                int input = int.Parse(Console.ReadLine());
-                return input >= lower && input <= upper ? input : GetNumberMovie(lower, upper);
-            }
-            catch (FormatException e)
-            {
-                Console.WriteLine("Invalid input.");
-                return GetNumberMovie(lower, upper);
-            }
-        }
 
-        public static int GetNumberScene(int lower, int upper)
+        public static int GetNumber(int lower, int upper, string arg)
         {
             try
             {
-                Console.Write($"Which scene would you like to watch? ({lower}-{upper}): ");
+                Console.Write($"{arg} ({lower}-{upper}): ");
                 int input = int.Parse(Console.ReadLine());
-                return input >= lower && input <= upper ? input : GetNumberScene(lower, upper);
+                return input >= lower && input <= upper ? input : GetNumber(lower, upper, arg);
             }
             catch (FormatException e)
             {
                 Console.WriteLine("Invalid input.");
-                return GetNumberScene(lower, upper);
+                return GetNumber(lower, upper, arg);
             }
         }
     }
