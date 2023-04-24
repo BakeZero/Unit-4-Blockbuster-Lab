@@ -6,8 +6,14 @@
         {
             Blockbuster blockbuster = new Blockbuster();
             Movie movie = blockbuster.CheckOut();
-            movie.Play();
-            //movie.PlayWholeMovie();
+
+            Console.Write("Do you want to watch the movie? (y/n)");
+            string prompt = Console.ReadLine();
+            if (prompt.ToLower() == "y")
+            {
+                movie.Play();
+                //movie.PlayWholeMovie();
+            }
         }
     }
 }
