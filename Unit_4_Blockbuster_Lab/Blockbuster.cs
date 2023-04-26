@@ -35,7 +35,6 @@ namespace Unit_4_Blockbuster_Lab
             Console.WriteLine("List of available movies:");
             PrintMovies();
             int index = Validator.GetNumber(1, Movies.Count, "Which movie would you like to watch?");
-            //int index = Validator.GetNumberMovie(1,Movies.Count);
             Console.WriteLine();
             Movies[index - 1].PrintInfo();
             return Movies[index - 1];
